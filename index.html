@@ -11,6 +11,8 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" />
+		<script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"></script>
 	</head>
 	<body class="homepage is-preload">
 		<div id="page-wrapper">
@@ -70,6 +72,10 @@
 						</p>
 					</header>
 				</section>
+
+				<div class="wrapper style2">
+  					<div id="map" style="width:100%; height:600px;"></div>
+				</div>
 
 			<!-- Carousel -->
 				<section class="carousel">
@@ -382,6 +388,17 @@
 			<script src="assets/js/breakpoints.min.js"></script>
 			<script src="assets/js/util.js"></script>
 			<script src="assets/js/main.js"></script>
+			<script>
+				const map = L.map('map').setView([60, 80], 4);
+				L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+					attribution: '© OpenStreetMap contributors'
+				}).addTo(map);
 
+				['10m_countries', '10m_lakes', '10m_rivers', '10m_railroads', '10m_pop'].forEach(name => {
+					fetch(`${name}.geojson`)
+					.then(res => res.json())
+					.then(data => L.geoJSON(data).addTo(map));
+				});
+			</script>
 	</body>
 </html>
