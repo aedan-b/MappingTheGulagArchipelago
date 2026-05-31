@@ -396,10 +396,46 @@
 				L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
 					attribution: '© CartoDB'
 				}).addTo(map);
-				['10m_countries', '10m_lakes', '10m_rivers', '10m_railroads', '10m_pop'].forEach(name => {
+
+				const layerStyles = {
+					'10m_countries': {
+						color: '#ffffff',
+						weight: 1,
+						fillColor: '#222222',
+						fillOpacity: 0.8
+					},
+					'10m_lakes': {
+						color: '#4a90d9',
+						weight: 1,
+						fillColor: '#1a3a5c',
+						fillOpacity: 0.5
+					},
+					'10m_rivers': {
+						color: '#4a90d9',
+						weight: 1
+					},
+					'10m_railroads': {
+						color: '#ffcc00',
+						weight: 1,
+						dashArray: '4 4'
+					},
+					'10m_pop': {
+						color: '#ff4444',
+						weight: 2
+					}
+				};
+				/*
+				color — outline/line colour (hex)
+weight — line thickness in pixels
+fillColor — fill colour for polygons
+fillOpacity — transparency of fill (0 to 1)
+dashArray — makes dashed lines (e.g. '4 4' = 4px dash, 4px gap)
+				*/
+
+				Object.entries(layerStyles).forEach(([name, style]) => {
 					fetch(`${name}.geojson`)
-					.then(res => res.json())
-					.then(data => L.geoJSON(data).addTo(map));
+						.then(res => res.json())
+						.then(data => L.geoJSON(data, { style: style }).addTo(map));
 				});
 			</script>
 	</body>
