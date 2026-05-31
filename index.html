@@ -390,10 +390,12 @@
 			<script src="assets/js/main.js"></script>
 			<script>
 				const map = L.map('map').setView([60, 80], 4);
-				L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-					attribution: '© OpenStreetMap contributors'
+				// L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+				// 	attribution: '© OpenStreetMap contributors'
+				// }).addTo(map);
+				L.tileLayer('https://{s}.basemaps.cartocdn.com/dark_all/{z}/{x}/{y}{r}.png', {
+					attribution: '© CartoDB'
 				}).addTo(map);
-
 				['10m_countries', '10m_lakes', '10m_rivers', '10m_railroads', '10m_pop'].forEach(name => {
 					fetch(`${name}.geojson`)
 					.then(res => res.json())
