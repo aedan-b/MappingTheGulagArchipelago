@@ -1,0 +1,13 @@
+{
+"type": "FeatureCollection",
+"name": "camp_test",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Solovetsky Islands", "Longitude": 65.02850474, "Latitude": 35.70922932 }, "geometry": { "type": "Point", "coordinates": [ 35.70922932, 65.02850474 ] } },
+{ "type": "Feature", "properties": { "Name": "Karelia�", "Longitude": 63.23645917, "Latitude": 34.97247721 }, "geometry": { "type": "Point", "coordinates": [ 34.97247721, 63.23645917 ] } },
+{ "type": "Feature", "properties": { "Name": "Amur Region", "Longitude": 53.35951368, "Latitude": 128.4642925 }, "geometry": { "type": "Point", "coordinates": [ 128.4642925, 53.35951368 ] } },
+{ "type": "Feature", "properties": { "Name": "Moscow Region", "Longitude": 56.3535806, "Latitude": 37.5099937 }, "geometry": { "type": "Point", "coordinates": [ 37.5099937, 56.3535806 ] } },
+{ "type": "Feature", "properties": { "Name": "Kolyma�", "Longitude": 64.76340727, "Latitude": 153.9618745 }, "geometry": { "type": "Point", "coordinates": [ 153.9618745, 64.76340727 ] } },
+{ "type": "Feature", "properties": { "Name": "Norilsk�", "Longitude": 69.33287254, "Latitude": 88.23230771 }, "geometry": { "type": "Point", "coordinates": [ 88.23230771, 69.33287254 ] } }
+]
+}
