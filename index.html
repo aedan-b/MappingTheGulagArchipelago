@@ -430,20 +430,28 @@
 						weight: 1,
 						dashArray: '4 4',
 						fillOpacity: 1
-					},
-					'10m_pop': {
-						color: '#ff4444',
-						weight: 2,
-						fillOpacity: 1
 					}
 				};
-				/*
-				color — outline/line colour (hex)
-weight — line thickness in pixels
-fillColor — fill colour for polygons
-fillOpacity — transparency of fill (0 to 1)
-dashArray — makes dashed lines (e.g. '4 4' = 4px dash, 4px gap)
-				*/
+
+				Object.entries(layerStyles).forEach(([name, style]) => {
+					fetch(`${name}.geojson`)
+						.then(res => res.json())
+						.then(data => L.geoJSON(data, { style: style }).addTo(map));
+				});
+
+				// Camp locations loaded separately as point markers
+				fetch('camp_test.geojson')
+					.then(res => res.json())
+					.then(data => L.geoJSON(data, {
+						pointToLayer: function(feature, latlng) {
+							return L.circleMarker(latlng, {
+								radius: 4,
+								fillColor: '#ff4444',
+								color: '#ff0000',
+								fillOpacity: 0.8
+							});
+						}
+					}).addTo(map));
 
 				Object.entries(layerStyles).forEach(([name, style]) => {
 					fetch(`${name}.geojson`)
