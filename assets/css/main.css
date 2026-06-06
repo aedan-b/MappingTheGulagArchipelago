@@ -84,7 +84,7 @@ input, select, textarea {
 
 	body {
 		background: #CD0000;
-		color: #5b5b5b;
+		color: #CD0000; /*5b5b5b */
 		font-size: 15pt;
 		line-height: 1.85em;
 		font-family: 'Source Sans Pro', sans-serif;
