@@ -84,7 +84,7 @@ input, select, textarea {
 
 	body {
 		background: #CD0000;
-		color: #CD0000; /*5b5b5b */
+		color: #5b5b5b; /*5b5b5b */
 		font-size: 15pt;
 		line-height: 1.85em;
 		font-family: 'Source Sans Pro', sans-serif;
@@ -2460,7 +2460,7 @@ input, select, textarea {
 		position: relative;
 		overflow: hidden;
 		padding: 6em 0 6em 0;
-		background: #CD0000; /* 2b252c */
+		background: #2b252c; /* 2b252c */
 		color: #CD0000; /* fff */
 	}
 
