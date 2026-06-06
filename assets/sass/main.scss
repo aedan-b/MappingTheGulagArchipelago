@@ -108,7 +108,7 @@
 
 	body {
 		background: #CD0000;
-		color: #5b5b5b;
+		color: #CD0000; /* 5b5b5b */
 		font-size: 15pt;
 		line-height: 1.85em;
 		font-family: 'Source Sans Pro', sans-serif;
@@ -574,14 +574,14 @@
 
 			tbody {
 				tr {
-					border-top: solid 1px #e5e5e5;
+					border-top: solid 1px #CD0000; /* e5e5e5 is the same color as the border of form elements, so it fits in well with the rest of the design */
 
 					&:first-child {
 						border-top: 0;
 					}
 
 					&:nth-child(2n+1) {
-						background: #fafafa;
+						background: #CD0000; /* fafafa */
 					}
 				}
 			}
