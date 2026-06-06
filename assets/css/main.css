@@ -83,7 +83,7 @@ input, select, textarea {
 	}
 
 	body {
-		background: #CD0000;
+		background: #f0f4f4;
 		color: #5b5b5b;
 		font-size: 15pt;
 		line-height: 1.85em;
@@ -1955,10 +1955,10 @@ input, select, textarea {
 		-webkit-appearance: none;
 		display: block;
 		border: 0;
-		background: #CD0000;
+		background: #fafafa;
 		width: 100%;
 		border-radius: 0.5em;
-		border: solid 1px #CD0000;
+		border: solid 1px #E5E5E5;
 		padding: 1em;
 		-moz-transition: background-color 0.35s ease-in-out, border-color 0.35s ease-in-out;
 		-webkit-transition: background-color 0.35s ease-in-out, border-color 0.35s ease-in-out;
@@ -1971,7 +1971,7 @@ input, select, textarea {
 		form input[type="password"]:focus,
 		form select:focus,
 		form textarea:focus {
-			background: #CD0000;
+			background: #fff;
 			border-color: #df7366;
 		}
 
@@ -2017,7 +2017,7 @@ input, select, textarea {
 		}
 
 			table.default tbody tr {
-				border-top: solid 1px #CD0000;
+				border-top: solid 1px #e5e5e5;
 			}
 
 				table.default tbody tr:first-child {
@@ -2025,7 +2025,7 @@ input, select, textarea {
 				}
 
 				table.default tbody tr:nth-child(2n+1) {
-					background: #CD0000;
+					background: #fafafa;
 				}
 
 			table.default td {
@@ -2039,11 +2039,11 @@ input, select, textarea {
 			}
 
 			table.default thead {
-				border-bottom: solid 2px #CD0000;
+				border-bottom: solid 2px #e5e5e5;
 			}
 
 			table.default tfoot {
-				border-top: solid 2px #CD0000;
+				border-top: solid 2px #e5e5e5;
 			}
 
 /* Button */
@@ -2055,7 +2055,7 @@ input, select, textarea {
 	.button {
 		position: relative;
 		display: inline-block;
-		background: #CD0000;
+		background: #df7366;
 		color: #fff;
 		text-align: center;
 		border-radius: 0.5em;
@@ -2180,7 +2180,7 @@ input, select, textarea {
 		background-size: cover;
 		background-position: center center;
 		background-attachment: fixed;
-		color: #CD0000;
+		color: #fff;
 		text-align: center;
 		padding: 7.5em 0 2em 0;
 		cursor: default;
@@ -2211,7 +2211,7 @@ input, select, textarea {
 			}
 
 		#header h1 {
-			color: #CD0000;
+			color: #fff;
 			font-size: 3em;
 			line-height: 1em;
 		}
@@ -2408,7 +2408,7 @@ input, select, textarea {
 /* Banner */
 
 	#banner {
-		background: #CD0000;
+		background: #fff;
 		text-align: center;
 		padding: 4.5em 0 4.5em 0;
 		margin-bottom: 0;
@@ -2461,11 +2461,11 @@ input, select, textarea {
 		overflow: hidden;
 		padding: 6em 0 6em 0;
 		background: #2b252c;
-		color: #CD0000;
+		color: #fff;
 	}
 
 		#footer .icon.circled {
-			background: #CD0000;
+			background: #fff;
 			color: #2b252c;
 		}
 
@@ -2475,7 +2475,7 @@ input, select, textarea {
 		}
 
 		#footer h2, #footer h3, #footer h4, #footer h5, #footer h6 {
-			color: #CD0000;
+			color: #fff;
 		}
 
 		#footer .contact {
