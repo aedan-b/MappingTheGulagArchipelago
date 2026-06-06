@@ -210,7 +210,7 @@ input, select, textarea {
 			display: block;
 			width: 1px;
 			height: 21px;
-			background: rgba(128, 128, 128, 0.2);
+			background: rgba(255, 0, 0, 0.2); /* 128 */
 		}
 
 		hr:before {
@@ -222,7 +222,7 @@ input, select, textarea {
 		}
 
 	.timestamp {
-		color: rgba(128, 128, 128, 0.75);
+		color: rgba(255, 0, 0, 0.2); /* 128 */
 		font-size: 0.8em;
 	}
 
@@ -2460,8 +2460,8 @@ input, select, textarea {
 		position: relative;
 		overflow: hidden;
 		padding: 6em 0 6em 0;
-		background: #2b252c;
-		color: #fff;
+		background: #CD0000; /* 2b252c */
+		color: #CD0000; /* fff */
 	}
 
 		#footer .icon.circled {
