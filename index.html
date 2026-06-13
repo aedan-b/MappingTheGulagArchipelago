@@ -199,18 +199,24 @@
 					}
 				};
 
+				// 1. Load base layers (countries, lakes, rivers, railroads)
 				Object.entries(layerStyles).forEach(([name, style]) => {
 					fetch(`${name}.geojson`)
 						.then(res => res.json())
 						.then(data => L.geoJSON(data, { style: style }).addTo(map));
 				});
 
-				// Camp locations loaded separately as point markers
+				// 2. Create a dedicated pane for camp markers so they always render on top
+				map.createPane('campPane');
+				map.getPane('campPane').style.zIndex = 650;
+
+				// 3. Load camp locations into the campPane
 				fetch('camp_test.geojson')
 					.then(res => res.json())
 					.then(data => L.geoJSON(data, {
 						pointToLayer: function(feature, latlng) {
 							return L.circleMarker(latlng, {
+								pane: 'campPane',
 								radius: 4,
 								fillColor: '#ff4444',
 								color: '#ff0000',
@@ -218,12 +224,6 @@
 							});
 						}
 					}).addTo(map));
-
-				Object.entries(layerStyles).forEach(([name, style]) => {
-					fetch(`${name}.geojson`)
-						.then(res => res.json())
-						.then(data => L.geoJSON(data, { style: style }).addTo(map));
-				});
 			</script>
 	</body>
 </html>
