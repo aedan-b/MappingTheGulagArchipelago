@@ -12,6 +12,54 @@
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<link rel="icon" type="image/png" href="images/gulag_logo.png" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
+		
+		<style>
+		.corner-border {
+			position: relative;
+			border: none;
+			padding: 1.5em;
+			margin-top: 1.5em;
+			font-style: italic;
+			font-size: 0.85em;
+			color: #555;
+		}
+		.corner-border::before,
+		.corner-border::after {
+			content: '';
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-color: #CD0000;
+			border-style: solid;
+		}
+		/* Top-left and top-right corners */
+		.corner-border::before {
+			top: 0; left: 0;
+			border-width: 3px 0 0 3px;
+		}
+		.corner-border::after {
+			top: 0; right: 0;
+			border-width: 3px 3px 0 0;
+		}
+		/* Bottom corners via inner spans */
+		.corner-border .corner-bl,
+		.corner-border .corner-br {
+			position: absolute;
+			width: 20px;
+			height: 20px;
+			border-color: #CD0000;
+			border-style: solid;
+		}
+		.corner-border .corner-bl {
+			bottom: 0; left: 0;
+			border-width: 0 0 3px 3px;
+		}
+		.corner-border .corner-br {
+			bottom: 0; right: 0;
+			border-width: 0 3px 3px 0;
+		}
+	</style>
+
 	</head>
 	<body class="left-sidebar is-preload">
 		<div id="page-wrapper" style="background: #CD0000;">
@@ -111,10 +159,12 @@
 											― Aleksandr Solzhenitsyn, The Gulag Archipelago 1918–1956
 										-->
 										<div class="col-12">
-											<blockquote style="border: 4px double #CD0000; padding: 1em; margin-top: 1.5em; font-style: italic; font-size: 0.85em; color: #555;">
+											<blockquote class="corner-border">
+												<span class="corner-bl"></span>
+												<span class="corner-br"></span>
 												"Macbeth's self-justifications were feeble – and his conscience devoured him. Yes, even Iago was a little lamb, too. The imagination and spiritual strength of Shakespeare's evildoers stopped short at a dozen corpses. Ideology—that is what gives evildoing its long-sought justification and gives the evildoer the necessary steadfastness and determination. That is the social theory which helps to make his acts seem good instead of bad in his own and others' eyes, so that he won't hear reproaches and curses but will receive praise and honors. That was how the agents of the Inquisition fortified their wills: by invoking Christianity; the conquerors of foreign lands, by extolling the grandeur of their Motherland; the colonizers, by civilization; the Nazis, by race; and the Jacobins (early and late), by equality, brotherhood, and the happiness of future generations.... Without evildoers there would have been no Archipelago."
 												<footer style="margin-top: 0.75em; font-style: normal; font-size: 0.9em; color: #444;">
-													― Aleksandr Solzhenitsyn, <cite>The Gulag Archipelago</cite>
+												― Aleksandr Solzhenitsyn, <em>The Gulag Archipelago</em>
 												</footer>
 											</blockquote>
 										</div>
@@ -127,15 +177,16 @@
 										<h2><a href="#">Solzhenitsyn's Archipelago</a></h2>
 									</header>
 									<div class="row">
-										<div class="col-6 col-12-mobile">
+										<div class="col-12 col-12-mobile">
+											<img src="images/alexander-solzjenitsyn01.jpg" alt="" style="float: right; width: 45%; margin: 0 0 1em 1.5em;" />
 											<header>
 												<h3>His Life</h3>
 											</header>
 											<p>
 												Born in 1918, Aleksandr Solzhenitsyn grew up in Rostov-on-Don Russia. 
-												While studying mathematicsat Rostov University, he also took correspodence courses in Moscow Institute's History-Philosophy-Literature department.
+												While studying mathematics at Rostov University, he also took correspondence courses in Moscow Institute's History-Philosophy-Literature department.
 												Throughout World War II, he served in the Soviet Army as the commander of a sound-ranging battery. 
-												While fighting in major actions on the Eastern Front, he was decoratedthree times for his service.
+												While fighting in major actions on the Eastern Front, he was decorated three times for his service.
 												In 1944 through 1945 he corresponded privately with a friend, of which included critical remarks on Stalin, and was arrested by SMERSH.
 											</p>
 											<p>
@@ -145,9 +196,6 @@
 												During the Khrushchev Thaw, Solzhenitsyn was allowed to return to the Soviet Union and published his first major work, <em>One Day in the Life of Ivan Denisovich</em>, in 1962 with state approval.
 												After Krushchev's fall from power, Solzhenitsyn was censored and his novels banned in the Soviet Union.
 											</p>
-										</div>
-										<div class="col-6 col-12-mobile">
-											<a href="#" class="image fit"><img src="images/alexander-solzjenitsyn01.jpg" alt="" /></a>
 										</div>
 									</div>
 									<section>
@@ -240,6 +288,7 @@
 			<script src="assets/js/main.js"></script>
 
 	</body>
+
 </html>
 
 <!--- Quotes
