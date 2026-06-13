@@ -182,13 +182,13 @@
 					},
 					'10m_lakes': {
 						color: '#002e63',
-						weight: 2,
+						weight: 1,
 						fillColor: '#1a3a5c',
 						fillOpacity: 1
 					},
 					'10m_rivers': {
-						color: '#4a90d9',
-						weight: 2,
+						color: '#002e63',
+						weight: 1,
 						fillOpacity: 1
 					},
 					'10m_railroads': {
@@ -215,13 +215,16 @@
 					.then(res => res.json())
 					.then(data => L.geoJSON(data, {
 						pointToLayer: function(feature, latlng) {
-							return L.circleMarker(latlng, {
-								pane: 'campPane',
-								radius: 4,
-								fillColor: '#ff4444',
-								color: '#ff0000',
-								fillOpacity: 0.8
+							const starIcon = L.divIcon({
+								className: '',
+								html: `<svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24">
+									<polygon points="12,2 15.09,8.26 22,9.27 17,14.14 18.18,21.02 12,17.77 5.82,21.02 7,14.14 2,9.27 8.91,8.26"
+										fill="#ff0000" stroke="#8b0000" stroke-width="1.5"/>
+								</svg>`,
+								iconSize: [12, 12],
+								iconAnchor: [6, 6]
 							});
+							return L.marker(latlng, { pane: 'campPane', icon: starIcon });
 						}
 					}).addTo(map));
 			</script>
