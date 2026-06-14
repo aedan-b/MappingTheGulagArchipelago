@@ -1,0 +1,29 @@
+{
+"type": "FeatureCollection",
+"name": "10m_camps",
+"crs": { "type": "name", "properties": { "name": "urn:ogc:def:crs:OGC:1.3:CRS84" } },
+"features": [
+{ "type": "Feature", "properties": { "Name": "Sevvostlag (Kolyma)", "Longitude": 153.9245497, "Latitude": 64.75627742 }, "geometry": { "type": "Point", "coordinates": [ 153.9245497, 64.75627742 ] } },
+{ "type": "Feature", "properties": { "Name": "Vorkutlag", "Longitude": 64.06064, "Latitude": 67.49678 }, "geometry": { "type": "Point", "coordinates": [ 64.06064, 67.49678 ] } },
+{ "type": "Feature", "properties": { "Name": "Norillag", "Longitude": 88.20276422000001, "Latitude": 69.35388874 }, "geometry": { "type": "Point", "coordinates": [ 88.20276422, 69.35388874 ] } },
+{ "type": "Feature", "properties": { "Name": "Karlag", "Longitude": 73.10848172, "Latitude": 49.86526143 }, "geometry": { "type": "Point", "coordinates": [ 73.10848172, 49.86526143 ] } },
+{ "type": "Feature", "properties": { "Name": "Belbaltlag", "Longitude": 34.97247721, "Latitude": 63.23645917 }, "geometry": { "type": "Point", "coordinates": [ 34.97247721, 63.23645917 ] } },
+{ "type": "Feature", "properties": { "Name": "Bamlag", "Longitude": 128.1, "Latitude": 51.4 }, "geometry": { "type": "Point", "coordinates": [ 128.1, 51.4 ] } },
+{ "type": "Feature", "properties": { "Name": "Dmitlag", "Longitude": 37.5046168, "Latitude": 56.2666228 }, "geometry": { "type": "Point", "coordinates": [ 37.5046168, 56.2666228 ] } },
+{ "type": "Feature", "properties": { "Name": "Berlag", "Longitude": 127.4805555, "Latitude": 54.36105275 }, "geometry": { "type": "Point", "coordinates": [ 127.4805555, 54.36105275 ] } },
+{ "type": "Feature", "properties": { "Name": "Butugychag", "Longitude": 149.1888889, "Latitude": 61.3166667 }, "geometry": { "type": "Point", "coordinates": [ 149.1888889, 61.3166667 ] } },
+{ "type": "Feature", "properties": { "Name": "Dalstroy", "Longitude": 150.8118822, "Latitude": 59.56058991 }, "geometry": { "type": "Point", "coordinates": [ 150.811882200000014, 59.56058991 ] } },
+{ "type": "Feature", "properties": { "Name": "Bogoslovlag", "Longitude": 59.99998847, "Latitude": 59.76685815 }, "geometry": { "type": "Point", "coordinates": [ 59.99998847, 59.76685815 ] } },
+{ "type": "Feature", "properties": { "Name": "Intalag", "Longitude": 66.03869622000001, "Latitude": 60.13489173 }, "geometry": { "type": "Point", "coordinates": [ 66.03869622, 60.13489173 ] } },
+{ "type": "Feature", "properties": { "Name": "Rechlag", "Longitude": 64.047595, "Latitude": 67.49889388 }, "geometry": { "type": "Point", "coordinates": [ 64.047595, 67.49889388 ] } },
+{ "type": "Feature", "properties": { "Name": "Steplag", "Longitude": 67.7, "Latitude": 47.7833 }, "geometry": { "type": "Point", "coordinates": [ 67.7, 47.7833 ] } },
+{ "type": "Feature", "properties": { "Name": "Gorlag", "Longitude": 88.18422624, "Latitude": 69.31425592 }, "geometry": { "type": "Point", "coordinates": [ 88.18422624, 69.31425592 ] } },
+{ "type": "Feature", "properties": { "Name": "Minlag", "Longitude": 44.21986673, "Latitude": 43.11504604 }, "geometry": { "type": "Point", "coordinates": [ 44.21986673, 43.11504604 ] } },
+{ "type": "Feature", "properties": { "Name": "Dubravlag", "Longitude": 54.41759021, "Latitude": 42.84992889 }, "geometry": { "type": "Point", "coordinates": [ 54.41759021, 42.84992889 ] } },
+{ "type": "Feature", "properties": { "Name": "Ekıbastūz", "Longitude": 75.3666667, "Latitude": 51.6666667 }, "geometry": { "type": "Point", "coordinates": [ 75.3666667, 51.6666667 ] } },
+{ "type": "Feature", "properties": { "Name": "Marfino Sharashka", "Longitude": 37.55818333, "Latitude": 56.07303215 }, "geometry": { "type": "Point", "coordinates": [ 37.55818333, 56.07303215 ] } },
+{ "type": "Feature", "properties": { "Name": "Kengir", "Longitude": 67.6152778, "Latitude": 47.8402777 }, "geometry": { "type": "Point", "coordinates": [ 67.6152778, 47.8402777 ] } },
+{ "type": "Feature", "properties": { "Name": "Solovki", "Longitude": 35.70922932, "Latitude": 65.02850474 }, "geometry": { "type": "Point", "coordinates": [ 35.70922932, 65.02850474 ] } },
+{ "type": "Feature", "properties": { "Name": "Perm-36", "Longitude": 58.26353939, "Latitude": 57.43296535 }, "geometry": { "type": "Point", "coordinates": [ 58.26353939, 57.43296535 ] } }
+]
+}

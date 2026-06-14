@@ -211,7 +211,7 @@
 				map.getPane('campPane').style.zIndex = 650;
 
 				// 3. Load camp locations into the campPane
-				fetch('camp_test.geojson')
+				fetch('10m_camps.geojson')
 					.then(res => res.json())
 					.then(data => L.geoJSON(data, {
 						pointToLayer: function(feature, latlng) {
