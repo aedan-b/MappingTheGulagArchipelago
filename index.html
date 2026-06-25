@@ -55,6 +55,9 @@
 				font-size: 0.85em;
 				line-height: 1.4em;
 			}
+			.camp-popup p strong {
+				color: #ff4d4d;
+			}
 			.camp-popup p.cat {
 				color: #aaaaaa;
 				font-style: italic;
@@ -300,7 +303,7 @@
 				}
 
 				// 3. Load camp locations into the campPane
-				fetch('camps_text.geojson')
+				fetch('10m_camps.geojson')
 					.then(res => res.json())
 					.then(data => L.geoJSON(data, {
 						pointToLayer: function(feature, latlng) {
