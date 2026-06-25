@@ -34,6 +34,46 @@
 			#page-wrapper {
 				padding-top: 0 !important;
 			}
+
+			/* Camp popup styling to match the site theme */
+			.camp-popup .leaflet-popup-content-wrapper {
+				background: #1c1c1e;
+				color: #f2f2f2;
+				border-radius: 6px;
+				border-top: 3px solid #CD0000;
+			}
+			.camp-popup .leaflet-popup-tip {
+				background: #1c1c1e;
+			}
+			.camp-popup h3 {
+				margin: 0 0 0.4em 0;
+				color: #ff4d4d;
+				font-size: 1.1em;
+			}
+			.camp-popup p {
+				margin: 0.25em 0;
+				font-size: 0.85em;
+				line-height: 1.4em;
+			}
+			.camp-popup p.cat {
+				color: #aaaaaa;
+				font-style: italic;
+				font-size: 0.78em;
+				margin-top: -0.2em;
+			}
+			.camp-popup a {
+				color: #ffbf00;
+			}
+			.camp-tooltip {
+				background: #28282B;
+				color: #fff;
+				border: none;
+				font-size: 0.85em;
+				padding: 0.3em 0.6em;
+			}
+			.camp-tooltip::before {
+				display: none;
+			}
 		</style>
 	</head>
 	<body class="homepage is-preload">
@@ -50,6 +90,7 @@
 								<li><a href="lessons-and-legacy.html">Lessons and Legacy</a></li>
 							</ul>
 						</nav>
+
 		
 			<!-- Map -->
 			<section id="banner" style="padding:0; background:none;">
@@ -226,8 +267,40 @@
 				map.createPane('campPane');
 				map.getPane('campPane').style.zIndex = 650;
 
+				// Helper: turn bare URLs in a string into clickable links
+				function linkify(text) {
+					if (!text) return '';
+					return text.replace(/(https?:\/\/[^\s)]+)/g, '<a href="$1" target="_blank" rel="noopener">$1</a>');
+				}
+
+				// Helper: build the click-popup HTML from a camp's properties (columns A-K)
+				function buildCampPopup(props) {
+					const start = props['Start Year'] ?? '?';
+					const end = props['End Year'] ?? 'present';
+					const pop = props['Max Population']
+						? Number(props['Max Population']).toLocaleString()
+						: 'Unknown';
+					const lat = props['Latitude'] != null ? props['Latitude'].toFixed(4) : '?';
+					const lon = props['Longitude'] != null ? props['Longitude'].toFixed(4) : '?';
+
+					const sourceHtml = props['Source URL']
+						? `<a href="${props['Source URL']}" target="_blank" rel="noopener">${props['Source']}</a>`
+						: (props['Source'] || 'Unknown');
+
+					let html = `<h3>${props.Name}</h3>`;
+					if (props['Category']) html += `<p class="cat">${props['Category']}</p>`;
+					html += `<p><strong>Coordinates:</strong> ${lat}, ${lon}</p>`;
+					html += `<p><strong>Active:</strong> ${start}–${end}</p>`;
+					html += `<p><strong>Max Population:</strong> ${pop}</p>`;
+					if (props['Industry']) html += `<p><strong>Industry:</strong> ${props['Industry']}</p>`;
+					if (props['Notes']) html += `<p><strong>Notes:</strong> ${linkify(props['Notes'])}</p>`;
+					if (props['Camp Type']) html += `<p><strong>Camp Type:</strong> ${props['Camp Type']}</p>`;
+					html += `<p><strong>Source:</strong> ${sourceHtml}</p>`;
+					return html;
+				}
+
 				// 3. Load camp locations into the campPane
-				fetch('10m_camps.geojson')
+				fetch('camps_text.geojson')
 					.then(res => res.json())
 					.then(data => L.geoJSON(data, {
 						pointToLayer: function(feature, latlng) {
@@ -240,7 +313,22 @@
 								iconSize: [16, 16],
 								iconAnchor: [6, 6]
 							});
-							return L.marker(latlng, { pane: 'campPane', icon: starIcon });
+							const marker = L.marker(latlng, { pane: 'campPane', icon: starIcon });
+
+							// Hover: quick name tooltip
+							marker.bindTooltip(feature.properties.Name, {
+								direction: 'top',
+								offset: [0, -8],
+								className: 'camp-tooltip'
+							});
+
+							// Click: full detail popup
+							marker.bindPopup(buildCampPopup(feature.properties), {
+								className: 'camp-popup',
+								maxWidth: 260
+							});
+
+							return marker;
 						}
 					}).addTo(map));
 			</script>
